@@ -27,6 +27,8 @@ public class BookingController{
 	
 	@Autowired
 	private BookingService bookingService;
+	
+	
 	/*******************************************************************************************************
 	 - Function Name	:	addBooking(@Validated @RequestBody Booking booking)
 	 - Input Parameters	:	Booking booking
@@ -45,14 +47,7 @@ public class BookingController{
 		log.info("Booking record added successfully");
 		return new ResponseEntity<>(booking1, HttpStatus.CREATED);
 	}
-	@PostMapping("/addBooking")
-	public ResponseEntity<Booking> addBooking1(@Validated @RequestBody Booking booking) throws com.google.zxing.WriterException, IOException  {
 
-		Booking booking1 = bookingService.addBooking(booking);
-//		System.out.println();
-		log.info("Booking record added successfully");
-		return new ResponseEntity<>(booking1, HttpStatus.CREATED);
-	}
 	
 	/*******************************************************************************************************
 	 - Function Name	:	getAllBookings()
